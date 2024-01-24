@@ -22,21 +22,14 @@ $metaTitle = 'BLOG';
     $pageExists = false;
 
     $paths = array(
-        // 'contact' => 'src/contact.php',
-        // 'content' => 'src/content.php',
-        // 'page1' => 'src/page1.php',
-        // 'page2' => 'src/page2.php',
-        // 'page3' => 'src/page3.php'
+        'home' => '../app/controllers/homeController.php',
     );
 
     ob_start();
     for ($i = 0; $i < count($paths) && !$pageExists; $i++) {
         if ($_GET['action'] === array_keys($paths)[$i]) {
-            // require_once 'src/processing.php';
-            // require_once 'src/error.php';
-
             // require_once 'src/header.php';
-            // require_once array_values($paths)[$i];
+            require_once array_values($paths)[$i];
             // require_once 'src/footer.php';
 
             $pageExists = true;
