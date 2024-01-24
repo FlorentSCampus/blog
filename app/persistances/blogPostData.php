@@ -2,10 +2,10 @@
 function lastBlogPosts($db) {
     $query =  file_get_contents('../database/lastBlogPosts.sql');
     
-    $arr[] = array();
+    $arr = array();
 
-    foreach ($db->query($query) as $row) {
-        array_push($arr, $row['pseudo'], $row['title'], $row['content']);
+    foreach ($db->query($query) as $data) {
+        array_push($arr, $data);
     }
 
     return $arr;
