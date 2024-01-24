@@ -1,4 +1,12 @@
 <?php
 function lastBlogPosts($db) {
-    return $db->query('SELECT * FROM articles ORDER BY publication_date DESC limit 10');
+    $query =  file_get_contents('../database/lastBlogPosts.sql');
+    
+    $arr[] = array();
+
+    foreach ($db->query($query) as $row) {
+        array_push($arr, $row['pseudo'], $row['title'], $row['content']);
+    }
+
+    return $arr;
 }
