@@ -1,4 +1,4 @@
-<?php require '../config/database.php' ?>
+<?php require_once '../config/database.php' ?>
 <?= 'Bienvenue sur le blog' ?>
 
 <?php
@@ -45,8 +45,7 @@ $metaTitle = 'BLOG';
     
 <?php
 $query = 'SELECT * FROM authors';
-$res = $db->prepare($query);
-$res->execute();
+$res = $db->query($query);
 $res = $res->fetchAll();
 
 foreach ($res as $data) {
