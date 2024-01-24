@@ -1,0 +1,1 @@
+SELECT pseudo, title, content FROM articles JOIN authors ON authors.id = articles.authors_id ORDER BY publication_date DESC limit 10
