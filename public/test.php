@@ -1,4 +1,3 @@
-<?php require '../config/database.php' ?>
 <?= 'Bienvenue sur le blog' ?>
 
 <?php
@@ -49,15 +48,12 @@ $metaTitle = 'BLOG';
     $render = ob_get_clean();
     echo $render;
     ?>
-    
-<?php
-$query = 'SELECT * FROM authors';
-$res = $db->prepare($query);
-$res->execute();
-$res = $res->fetchAll();
 
-foreach ($res as $data) {
-echo $data['pseudo'];
-}
-?>
+    <?php require '../config/database.php' ?>
+    <?php
+    $res = $db->query('SELECT last_name FROM authors');
+    print_r($res);
+
+    echo "test";
+    ?>
 </body>
