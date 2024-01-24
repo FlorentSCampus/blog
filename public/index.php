@@ -28,28 +28,13 @@ $metaTitle = 'BLOG';
     ob_start();
     for ($i = 0; $i < count($paths) && !$pageExists; $i++) {
         if ($_GET['action'] === array_keys($paths)[$i]) {
-            // require_once 'src/header.php';
             require_once array_values($paths)[$i];
-            // require_once 'src/footer.php';
 
             $pageExists = true;
         }
     }
-
-    if (!$pageExists) {
-        // require_once 'src/404.php';
-    }
+    
     $render = ob_get_clean();
     echo $render;
     ?>
-    
-<?php
-$query = 'SELECT * FROM authors';
-$res = $db->query($query);
-$res = $res->fetchAll();
-
-foreach ($res as $data) {
-echo $data['pseudo'];
-}
-?>
 </body>
