@@ -2,5 +2,5 @@
 <?= 'Hello World' ?>
 
 <?php
-$res = lastBlogPosts('e');
+$res = lastBlogPosts($db);
 var_dump($res);
