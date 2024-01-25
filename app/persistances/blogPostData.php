@@ -36,3 +36,12 @@ function commentsByBlogPost($db, $id)
 
     return $arr;
 }
+
+function blogPostCreate($db, $user, $date, $post)
+{
+    $query =  "";
+
+    $db->exec($query);
+
+    echo "SEND TEST";
+}
