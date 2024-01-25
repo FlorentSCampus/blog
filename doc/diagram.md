@@ -1,4 +1,7 @@
 ```mermaid
+---
+Un dessin vaut mieux qu’un long discours
+---
 graph TD
 A[Start] --> B[get all posts from database]
 B --> C{no blog post ?}
@@ -10,6 +13,9 @@ F -- No --> G[End]
 ```
 
 ```mermaid
+---
+Un dessin vaut mieux qu’un long discours
+---
 sequenceDiagram
 User->>index.php: ?action=
 index.php->>homeController.php: include
@@ -26,6 +32,9 @@ home.tpl.php-->>User: display blogPosts
 ```
 
 ```mermaid
+---
+Afficher un article
+---
 sequenceDiagram
 User->>index.php: ?action=title
 index.php->>blogPostController.php: include
@@ -50,6 +59,9 @@ blogPost.tpl.php-->>User: display blogArticleAndComments
 ```
 
 ```mermaid
+---
+Créer un article
+---
 sequenceDiagram
 User->>index.php: ?action=blogPostCreate
 index.php->>blogPostCreateController.php: include
@@ -61,4 +73,22 @@ PDOStatement-->>blogPostData.php: blogPostCreate
 blogPostData.php-->>blogPostCreateController.php: blogPostCreate
 blogPostCreateController.php->>blogPostCreate.tpl.php: blogPostCreate
 blogPostCreate.tpl.php-->>User: display blogPostCreate
+```
+
+```mermaid
+---
+TO DO
+Modifier un article
+---
+sequenceDiagram
+User->>index.php: ?action=blogPostModify
+index.php->>blogPostModifyController.php: include
+blogPostModifyController.php->>blogPostUpdate.tpl.php: postModifyForm
+blogPostUpdate.tpl.php-->>blogPostModifyController.php: postValue
+blogPostModifyController.php->>blogPostData.php: blogPostUpdate()
+blogPostData.php->>PDOStatement: execute()
+PDOStatement-->>blogPostData.php: blogPostUpdate
+blogPostData.php-->>blogPostModifyController.php: blogPostUpdate
+blogPostModifyController.php->>blogPostUpdate.tpl.php: blogPostUpdate
+blogPostUpdate.tpl.php-->>User: display blogPostUpdate
 ```
