@@ -54,6 +54,7 @@ sequenceDiagram
 User->>index.php: ?action=postCreate
 index.php->>blogPostCreateController.php: include
 blogPostCreateController.php->>blogPostCreate.tpl.php: PostForm
+blogPostCreate.tpl.php->>blogPostCreateController.php: postValue
 blogPostCreateController.php->>blogPostData.php: blogPostCreate()
 blogPostData.php->>PDOStatement: execute()
 PDOStatement-->>blogPostData.php: blogPostCreate
