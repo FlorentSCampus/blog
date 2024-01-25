@@ -1,6 +1,4 @@
-<?php 
-echo 'Hello World';
-
+<?php
 require_once '../app/persistances/blogPostData.php';
 
 $res = lastBlogPosts($db);

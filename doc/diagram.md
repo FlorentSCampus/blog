@@ -45,6 +45,6 @@ PDOStatement-->>blogPostData.php: isSuccess
 blogPostData.php->>PDOStatement: fetchAll()
 PDOStatement-->>blogPostData.php: blogComments
 blogPostData.php-->>blogPostController.php: blogComments
-blogPostController.php->>home.tpl.php: blogArticleAndComments
-home.tpl.php-->>User: display blogArticleAndComments
+blogPostController.php->>blogPost.tpl.php: blogArticleAndComments
+blogPost.tpl.php-->>User: display blogArticleAndComments
 ```

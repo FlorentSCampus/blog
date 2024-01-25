@@ -23,6 +23,7 @@ $metaTitle = 'BLOG';
 
     $paths = array(
         'home' => '../app/controllers/homeController.php',
+        'blogPost' => '../app/controllers/blogPostController.php',
     );
 
     ob_start();

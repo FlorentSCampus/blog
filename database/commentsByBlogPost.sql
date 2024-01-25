@@ -1,0 +1,1 @@
+SELECT pseudo, comment, comment_date FROM comments JOIN authors ON authors.id = comments.authors_id JOIN articles ON articles.id = comments.articles_id WHERE articles.id = 1
