@@ -1,6 +1,6 @@
 <?php
 function lastBlogPosts($db) {
-    $query =  file_get_contents('../database/lastBlogPosts.sql');
+    $query =  'SELECT pseudo, title, content, publication_date FROM articles JOIN authors ON authors.id = articles.authors_id ORDER BY publication_date DESC limit 10';
     
     $arr = array();
 
