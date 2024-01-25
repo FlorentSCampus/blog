@@ -1,0 +1,1 @@
+INSERT INTO articles (title, content, publication_date, start_date_publication, end_date_publication, rating, authors_id) VALUES ('Cuisine', 'Lorem Ipsum...', NOW(), '2024-01-01 00:00:00', '2024-07-31 00:00:00', '5', NULL)
