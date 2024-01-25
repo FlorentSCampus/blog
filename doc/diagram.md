@@ -26,7 +26,7 @@ home.tpl.php-->>User: display blogPosts
 ```
 
 ```mermaid
-diplayArticles
+sequenceDiagram
 User->>index.php: ?action=title
 index.php->>blogPostController.php: include
 blogPostController.php->>blogPostData.php: blogPostById()
@@ -36,6 +36,14 @@ blogPostData.php->>PDOStatement: execute()
 PDOStatement-->>blogPostData.php: isSuccess
 blogPostData.php->>PDOStatement: fetchAll()
 PDOStatement-->>blogPostData.php: blogArticles
+blogPostData.php-->>blogPostController.php: blogArticles
+blogPostController.php->>blogPostData.php: commentsByBlogPost()
+blogPostData.php->>PDO: prepare()
+PDO-->>blogPostData.php: PDOStatement
+blogPostData.php->>PDOStatement: execute()
+PDOStatement-->>blogPostData.php: isSuccess
+blogPostData.php->>PDOStatement: fetchAll()
+PDOStatement-->>blogPostData.php: blogComments
 blogPostData.php-->>blogPostController.php: blogComments
 blogPostController.php->>home.tpl.php: blogArticleAndComments
 home.tpl.php-->>User: display blogArticleAndComments
