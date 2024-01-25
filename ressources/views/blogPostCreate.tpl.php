@@ -17,3 +17,4 @@
     </div>
     <input type="submit" value="Send your post" />
 </form>
+<a href="index.php?action=home">RETOUR SUR LA HOME</a>
