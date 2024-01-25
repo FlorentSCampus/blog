@@ -1,6 +1,6 @@
 <?php
 function lastBlogPosts($db) {
-    $query =  'SELECT articles.id, title, publication_date FROM articles JOIN authors ON authors.id = articles.authors_id ORDER BY publication_date DESC limit 10';
+    $query =  "SELECT articles.id, title, publication_date FROM articles JOIN authors ON authors.id = articles.authors_id ORDER BY publication_date DESC limit 10";
     
     $arr = array();
 
@@ -37,11 +37,11 @@ function commentsByBlogPost($db, $id)
     return $arr;
 }
 
-function blogPostCreate($db, $user, $date, $post)
+function blogPostCreate($db, $title, $rating, $post)
 {
-    $query =  "";
+    $query =  "INSERT INTO articles (title, content, publication_date, start_date_publication, end_date_publication, rating, authors_id) VALUES ('$title', '$post', NOW(), '2024-01-01 00:00:00', '2024-07-31 00:00:00', '$rating', NULL)";
 
     $db->exec($query);
 
-    echo "SEND TEST";
+    echo 'SEND TEST';
 }

@@ -51,7 +51,7 @@ blogPost.tpl.php-->>User: display blogArticleAndComments
 
 ```mermaid
 sequenceDiagram
-User->>index.php: ?action=postCreate
+User->>index.php: ?action=blogPostCreate
 index.php->>blogPostCreateController.php: include
 blogPostCreateController.php->>blogPostCreate.tpl.php: postForm
 blogPostCreate.tpl.php-->>blogPostCreateController.php: postValue
@@ -59,6 +59,6 @@ blogPostCreateController.php->>blogPostData.php: blogPostCreate()
 blogPostData.php->>PDOStatement: execute()
 PDOStatement-->>blogPostData.php: blogPostCreate
 blogPostData.php-->>blogPostCreateController.php: blogPostCreate
-blogPostCreateController.php->>blogPost.tpl.php: blogPostCreate
-blogPost.tpl.php-->>User: display blogPostCreate
+blogPostCreateController.php->>blogPostCreate.tpl.php: blogPostCreate
+blogPostCreate.tpl.php-->>User: display blogPostCreate
 ```
