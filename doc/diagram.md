@@ -27,7 +27,7 @@ home.tpl.php-->>User: display blogPosts
 
 ```mermaid
 diplayArticles
-User->>index.php: ?action=title
+User->>index.php: ?action=
 index.php->>blogPostController.php: include
 blogPostController.php->>blogPostData.php: blogPostById()
 blogPostData.php->>PDO: prepare()
