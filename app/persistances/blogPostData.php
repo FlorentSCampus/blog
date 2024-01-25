@@ -1,6 +1,6 @@
 <?php
 function lastBlogPosts($db) {
-    $query =  'SELECT pseudo, title, content, publication_date FROM articles JOIN authors ON authors.id = articles.authors_id ORDER BY publication_date DESC limit 10';
+    $query =  'SELECT articles.id, title, publication_date FROM articles JOIN authors ON authors.id = articles.authors_id ORDER BY publication_date DESC limit 10';
     
     $arr = array();
 

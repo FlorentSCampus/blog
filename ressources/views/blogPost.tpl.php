@@ -22,3 +22,4 @@ if (!empty($comment)) :
 <?php
     endfor;
 endif; ?>
+<a href="index.php?action=home">RETOUR SUR LA HOME</a>
