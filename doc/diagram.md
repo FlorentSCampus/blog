@@ -48,3 +48,16 @@ blogPostData.php-->>blogPostController.php: blogComments
 blogPostController.php->>blogPost.tpl.php: blogArticleAndComments
 blogPost.tpl.php-->>User: display blogArticleAndComments
 ```
+
+```mermaid
+sequenceDiagram
+User->>index.php: ?action=postCreate
+index.php->>blogPostCreateController.php: include
+blogPostCreateController.php->>blogPostCreate.tpl.php: PostForm
+blogPostCreateController.php->>blogPostData.php: blogPostCreate()
+blogPostData.php->>PDOStatement: execute()
+PDOStatement-->>blogPostData.php: blogPostCreate
+blogPostData.php-->>blogPostCreateController.php: blogPostCreate
+blogPostCreateController.php->>blogPost.tpl.php: blogPostCreate
+blogPost.tpl.php-->>User: display blogPostCreate
+```
