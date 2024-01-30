@@ -44,9 +44,9 @@ function blogPostCreate($db, $title, $rating, $post)
     $db->exec($query);
 }
 
-function blogPostUpdate($db, $article)
+function blogPostUpdate($db, $id, $article)
 {
-    // $query =  "INSERT INTO articles (title, content, publication_date, start_date_publication, end_date_publication, rating, authors_id) VALUES ('$title', '$post', NOW(), '2024-01-01 00:00:00', '2024-07-31 00:00:00', '$rating', '4')";
+    $query =  "UPDATE articles SET content = '$article', publication_date = NOW() WHERE id = $id";
 
-    // $db->exec($query);
+    $db->exec($query);
 }
