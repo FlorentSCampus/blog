@@ -19,7 +19,6 @@ $metaTitle = 'BLOG';
 
 <body>
     <?php
-
     $uri = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     $paths = array(
