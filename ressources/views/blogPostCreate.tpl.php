@@ -18,8 +18,4 @@
     <input type="submit" value="Send your post" />
 </form>
 <br>
-<a href='index.php?action=blogPost&id=<?= $_SESSION['id'] ?>'>RETURN TO ARTICLE</a>
-<br>
-<br>
-<br>
 <a href='index.php?action=home'>RETURN TO HOME</a>
