@@ -37,11 +37,13 @@ function commentsByBlogPost($db, $id)
     return $arr;
 }
 
-function blogPostCreate($db, $title, $rating, $post)
+function blogPostCreate($db, $title, $post, $rating)
 {
-    $query = "INSERT INTO articles (title, content, publication_date, start_date_publication, end_date_publication, rating, authors_id) VALUES ('$title', '$post', NOW(), '2024-01-01 00:00:00', '2024-07-31 00:00:00', '$rating', '4')";
+    $query = "INSERT INTO articles (title, content, publication_date, start_date_publication, end_date_publication, rating, authors_id) VALUES ('$title', '$post', NOW(), '2024-01-01', '2024-07-31', '$rating', '4')";
 
     $db->exec($query);
+
+    header('Location: index.php?action=home');
 }
 
 function blogPostUpdate($db, $id, $article)
@@ -49,11 +51,15 @@ function blogPostUpdate($db, $id, $article)
     $query = "UPDATE articles SET content = '$article', publication_date = NOW() WHERE id = '$id'";
 
     $db->exec($query);
+
+    header('Location: index.php?action=blogPost&id=' . $id);
 }
 
 function blogPostDelete($db, $id)
 {
-    $query = "DELETE articles WHERE id = '$id'";
+    $query = "DELETE FROM articles WHERE id = '$id'";
 
     $db->exec($query);
+
+    header('Location: index.php?action=home');
 }
