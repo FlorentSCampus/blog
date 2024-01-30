@@ -46,7 +46,7 @@ function blogPostCreate($db, $title, $rating, $post)
 
 function blogPostUpdate($db, $id, $article)
 {
-    $query = "UPDATE articles SET content = '$article', publication_date = NOW() WHERE id = $id";
+    $query = "UPDATE articles SET content = '$article', publication_date = NOW() WHERE id = '$id'";
 
     $db->exec($query);
 }
