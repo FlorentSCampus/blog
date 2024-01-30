@@ -50,3 +50,10 @@ function blogPostUpdate($db, $id, $article)
 
     $db->exec($query);
 }
+
+function blogPostDelete($db, $id)
+{
+    $query = "DELETE articles WHERE id = '$id'";
+
+    $db->exec($query);
+}
