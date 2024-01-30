@@ -31,6 +31,7 @@ $metaTitle = 'BLOG';
     );
 
     ob_start();
+    require_once "../ressources/views/layouts/header.tpl.php";
     require_once $paths[$uri];
     $render = ob_get_clean();
     echo $render;
