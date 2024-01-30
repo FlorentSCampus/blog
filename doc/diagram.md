@@ -77,7 +77,6 @@ blogPostCreate.tpl.php-->>User: display blogPostCreate
 
 ```mermaid
 ---
-TO DO
 Modifier un article
 ---
 sequenceDiagram
@@ -91,4 +90,21 @@ PDOStatement-->>blogPostData.php: blogPostUpdate
 blogPostData.php-->>blogPostModifyController.php: blogPostUpdate
 blogPostModifyController.php->>blogPostUpdate.tpl.php: blogPostUpdate
 blogPostUpdate.tpl.php-->>User: display blogPostUpdate
+```
+
+```mermaid
+---
+Supprimer un article
+---
+sequenceDiagram
+User->>index.php: ?action=blogPostDelete
+index.php->>blogPostDeleteController.php: include
+blogPostModifyController.php->>blogPost.tpl.php: postDeleteButton
+blogPost.tpl.php-->blogPostModifyController.php: 
+blogPostDeleteController.php->>blogPostData.php: blogPostDelete()
+blogPostData.php->>PDOStatement: execute()
+PDOStatement-->>blogPostData.php: blogPostDelete
+blogPostData.php-->>blogPostDeleteController.php: blogPostDelete
+blogPostDeleteController.php->>home.tpl.php: blogPostDelete
+home.tpl.php-->>User: no display blogPostDelete
 ```
