@@ -14,7 +14,7 @@ $metaTitle = 'BLOG';
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title><?= $metaTitle ?></title>
 
-    <link rel='stylesheet' href='#'>
+    <link rel='stylesheet' href='style.css'>
 </head>
 
 <body>
@@ -30,13 +30,7 @@ $metaTitle = 'BLOG';
     );
 
     ob_start();
-    foreach ($paths as $key => $value) {
-        if ($uri === $key) {
-            require_once "../ressources/views/layouts/header.tpl.php";
-            require_once $value;
-        }
-    }
-    
+    require_once $paths[$uri];
     $render = ob_get_clean();
     echo $render;
     ?>
