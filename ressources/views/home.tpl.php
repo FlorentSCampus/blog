@@ -13,3 +13,7 @@ if (!empty($res)) :
 <?php
     endfor;
 endif; ?>
+<br>
+<br>
+<br>
+<a href='index.php?action=blogPostCreate'>CREATE ARTICLE ?</a>
