@@ -17,4 +17,9 @@
     </div>
     <input type="submit" value="Send your post" />
 </form>
-<a href="index.php?action=home">RETOUR SUR LA HOME</a>
+<br>
+<a href='index.php?action=blogPost&id=<?= $_SESSION['id'] ?>'>RETURN TO ARTICLE</a>
+<br>
+<br>
+<br>
+<a href='index.php?action=home'>RETURN TO HOME</a>
