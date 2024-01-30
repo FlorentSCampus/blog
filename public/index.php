@@ -20,7 +20,7 @@ $metaTitle = 'BLOG';
 <body>
     <?php
 
-    $uri = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
+    $uri = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     $paths = array(
         'home' => '../app/controllers/homeController.php',
@@ -30,11 +30,9 @@ $metaTitle = 'BLOG';
     );
 
     ob_start();
-    for ($i = 0; $i < count($paths) && !$pageExists; $i++) {
-        if ($uri === array_keys($paths)[$i]) {
-            require_once array_values($paths)[$i];
-
-            $pageExists = true;
+    foreach ($paths as $key => $value) {
+        if ($uri === $key) {
+            require_once $value;
         }
     }
     
