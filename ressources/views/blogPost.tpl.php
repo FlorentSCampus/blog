@@ -1,7 +1,4 @@
 <?php
-require_once 'layouts/header.tpl.php';
-require_once 'layouts/footer.tpl.php';
-
 if (!empty($article)) :
     for ($i = 0; $i < count($article); $i++) : ?>
         <div class='post'>
@@ -11,7 +8,10 @@ if (!empty($article)) :
             <p class='content'><?= $article[$i]['content'] ?></p>
         </div>
         <br>
-        <a href='index.php?action=blogPostModify&id=<?= $article[$i]['id'] ?>'>MODIFY ARTICLE ?</a>
+        <a style="color: green;" href='index.php?action=blogPostModify&id=<?= $_GET['id'] ?>'>MODIFY ARTICLE ?</a>
+        <br>
+        <br>
+        <a style="color: red;" href='index.php?action=blogPostDelete&id=<?= $_GET['id'] ?>'>DELETE ARTICLE ?</a>
         <br>
         <br>
         <br>
