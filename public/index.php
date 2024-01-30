@@ -32,6 +32,7 @@ $metaTitle = 'BLOG';
     ob_start();
     foreach ($paths as $key => $value) {
         if ($uri === $key) {
+            require_once "../ressources/views/layouts/header.tpl.php";
             require_once $value;
         }
     }
