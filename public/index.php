@@ -19,17 +19,19 @@ $metaTitle = 'BLOG';
 
 <body>
     <?php
-    $pageExists = false;
+
+    $uri = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_SPECIAL_CHARS);
 
     $paths = array(
         'home' => '../app/controllers/homeController.php',
         'blogPost' => '../app/controllers/blogPostController.php',
         'blogPostCreate' => '../app/controllers/blogPostCreateController.php',
+        'blogPostModify' => '../app/controllers/blogPostModifyController.php',
     );
 
     ob_start();
     for ($i = 0; $i < count($paths) && !$pageExists; $i++) {
-        if ($_GET['action'] === array_keys($paths)[$i]) {
+        if ($uri === array_keys($paths)[$i]) {
             require_once array_values($paths)[$i];
 
             $pageExists = true;
