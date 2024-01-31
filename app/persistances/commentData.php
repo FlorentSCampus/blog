@@ -19,3 +19,14 @@ function commentCreate($db, $comment, $authors_id, $articles_id) {
 
     header('Location: index.php?action=blogPost&id=' . $articles_id);
 }
+
+function commentUpdate($db, $comment, $authors_id, $articles_id)
+{
+    $query = "UPDATE comments
+    SET comment = '$comment', comment_date = NOW()
+    WHERE authors_id = '$authors_id' AND articles_id = '$articles_id'";
+
+    $db->exec($query);
+
+    header('Location: index.php?action=blogPost&id=' . $articles_id);
+}
