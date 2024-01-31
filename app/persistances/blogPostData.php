@@ -102,9 +102,9 @@ function blogPostsByCategory($db, $category)
     $query = "SELECT a.publication_date, a.title, a.content
     FROM articles AS a
     INNER JOIN articles_categories AS ac
-    ON ac.categories_id = a.id
+    ON ac.articles_id = a.id
     INNER JOIN categories AS c
-    ON ac.articles_id = c.id
+    ON ac.categories_id = c.id
     WHERE c.category_name = '$category'";
 
     $arr = array();
