@@ -1,6 +1,8 @@
 <?php
 require_once 'layouts/header.tpl.php';
 
+echo 'Bienvenue sur le blog <br><br>';
+
 if (!empty($cat)) : ?>
     <select name="category" onchange="location = this.value;">
         <option value="">--Please choose a category--</option>
