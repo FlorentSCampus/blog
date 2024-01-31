@@ -1,11 +1,9 @@
 <?php
 require_once 'layouts/header.tpl.php';
 
-echo 'Bienvenue sur le blog <br><br>';
-
 if (!empty($cat)) : ?>
     <select name="category" onchange="location = this.value;">
-        <option value="">--Please choose a category--</option>
+        <option value="">-- Please choose a category --</option>
         <?php for ($i = 0; $i < count($cat); $i++) : ?>
             <option value="index.php?action=blogPostCategory&name=<?= $cat[$i]['category_name'] ?>"><?= $cat[$i]['category_name'] ?></option>
         <?php endfor; ?>
@@ -13,12 +11,13 @@ if (!empty($cat)) : ?>
     <?php endif;
 if (!empty($res)) :
     for ($i = 0; $i < count($res); $i++) : ?>
-        <div class="post">
-            <a href="index.php?action=blogPost&id=<?= $res[$i]['id'] ?>">
-                <p class="content"><?= $res[$i]['publication_date'] ?></p>
-                <p class="content"><?= $res[$i]['title'] ?></p>
-            </a>
-        </div>
+        <a class="post" href="index.php?action=blogPost&id=<?= $res[$i]['id'] ?>">
+            <img src="../img/sylvain-mauroux-WI8phMvAEMI-unsplash.webp" alt="Climbing picture" />
+            <div class="content">
+                <p><?= $res[$i]['title'] ?></p>
+                <p><?= $res[$i]['content'] ?></p>
+            </div>
+        </a>
 <?php
     endfor;
 endif; ?>

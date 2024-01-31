@@ -1,6 +1,6 @@
 <?php
 function lastBlogPosts($db) {
-    $query = "SELECT articles.id, title, publication_date
+    $query = "SELECT articles.id, title, content
     FROM articles
     INNER JOIN authors
     ON authors.id = articles.authors_id
