@@ -28,6 +28,7 @@ $metaTitle = 'BLOG';
         'blogPostDelete' => '../app/controllers/blogPostDeleteController.php',
         'blogPostCategory' => '../app/controllers/blogPostCategoryController.php',
         'commentCreate' => '../app/controllers/commentCreateController.php',
+        'commentModify' => '../app/controllers/commentModifyController.php',
     );
 
     ob_start();
