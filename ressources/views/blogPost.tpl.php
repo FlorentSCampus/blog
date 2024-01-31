@@ -23,10 +23,10 @@ if (!empty($comment)) :
             <p class='content'><?= $comment[$i]['comment'] ?></p>
         </div>
         <br>
-        <a style="color: green;" href='index.php?action=blogCommentModify&id=<?= $_GET['id'] ?>'>MODIFY COMMENT ?</a>
+        <a style="color: green;" href='index.php?action=commentModify&authors_id=<?= $comment[$i]['authors_id'] ?>&articles_id=<?= $_GET['id'] ?>'>MODIFY COMMENT ?</a>
         <br>
         <br>
-        <a style="color: red;" href='index.php?action=blogCommentDelete&id=<?= $_GET['id'] ?>'>DELETE COMMENT ?</a>
+        <a style="color: red;" href='index.php?action=commentDelete&authors_id=<?= $comment[$i]['authors_id'] ?>&articles_id=<?= $_GET['id'] ?>'>DELETE COMMENT ?</a>
         <br>
         <br>
         <br>
@@ -34,7 +34,7 @@ if (!empty($comment)) :
     endfor;
 endif; ?>
 <br>
-<a href='index.php?action=blogCommentCreate&id=<?= $_GET['id'] ?>'>CREATE COMMENT ?</a>
+<a href='index.php?action=commentCreate&id=<?= $_GET['id'] ?>'>CREATE COMMENT ?</a>
 <br>
 <br>
 <a href='index.php?action=home'>RETURN TO HOME</a>
