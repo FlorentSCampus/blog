@@ -2,14 +2,13 @@
 require_once 'layouts/header.tpl.php';
 
 if (!empty($cat)) : ?>
-    <select name="forma" onchange="location = this.value;">
+    <select name="category" onchange="location = this.value;">
         <option value="">--Please choose a category--</option>
         <?php for ($i = 0; $i < count($cat); $i++) : ?>
             <option value="index.php?action=blogPostCategory&name=<?= $cat[$i]['category_name'] ?>"><?= $cat[$i]['category_name'] ?></option>
         <?php endfor; ?>
     </select>
     <?php endif;
-
 if (!empty($res)) :
     for ($i = 0; $i < count($res); $i++) : ?>
         <div class="post">
