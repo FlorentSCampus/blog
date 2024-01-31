@@ -35,7 +35,7 @@ function blogPostById($db, $id)
 
 function commentsByBlogPost($db, $id)
 {
-    $query = "SELECT pseudo, comment, comment_date
+    $query = "SELECT pseudo, comment, comment_date, comments.authors_id
     FROM comments
     INNER JOIN authors
     ON authors.id = comments.authors_id
