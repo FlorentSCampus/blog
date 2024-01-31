@@ -30,3 +30,13 @@ function commentUpdate($db, $comment, $authors_id, $articles_id)
 
     header('Location: index.php?action=blogPost&id=' . $articles_id);
 }
+
+function commentDelete($db, $authors_id, $articles_id)
+{
+    $query = "DELETE FROM comments
+    WHERE authors_id = '$authors_id' AND articles_id = '$articles_id'";
+
+    $db->exec($query);
+
+    header('Location: index.php?action=blogPost&id=' . $articles_id);
+}
