@@ -34,7 +34,7 @@ if (!empty($comment)) :
     endfor;
 endif; ?>
 <br>
-<a href='index.php?action=blogCommentCreate'>CREATE COMMENT ?</a>
+<a href='index.php?action=blogCommentCreate&id=<?= $_GET['id'] ?>'>CREATE COMMENT ?</a>
 <br>
 <br>
 <a href='index.php?action=home'>RETURN TO HOME</a>
