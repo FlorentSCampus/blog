@@ -11,7 +11,7 @@ function getAuthors($db) {
     return $arr;
 }
 
-function blogCommentCreate($db, $comment, $authors_id, $articles_id) {
+function commentCreate($db, $comment, $authors_id, $articles_id) {
     $query = "INSERT INTO comments (comment, comment_date, authors_id, articles_id)
     VALUES ('$comment', NOW(), '$authors_id', '$articles_id')";
 

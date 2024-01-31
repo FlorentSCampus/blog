@@ -1,4 +1,4 @@
-<form action='index.php?action=blogCommentCreate&id=<?= $_GET['id'] ?>' method='post'>
+<form action='index.php?action=commentCreate&id=<?= $_GET['id'] ?>' method='post'>
     <select name="pseudo" id="pseudo" required>
         <option value="">-- Please choose an authors --</option>
         <?php
