@@ -1,5 +1,4 @@
 <?php require_once '../config/database.php' ?>
-<?= 'Bienvenue sur le blog' ?>
 
 <?php
 $metaTitle = 'BLOG';
@@ -27,7 +26,8 @@ $metaTitle = 'BLOG';
         'blogPostCreate' => '../app/controllers/blogPostCreateController.php',
         'blogPostModify' => '../app/controllers/blogPostModifyController.php',
         'blogPostDelete' => '../app/controllers/blogPostDeleteController.php',
-        'blogPostCategory' => '../app/controllers/blogPostCategoryController.php'
+        'blogPostCategory' => '../app/controllers/blogPostCategoryController.php',
+        'blogCommentCreate' => '../app/controllers/blogCommentCreateController.php',
     );
 
     ob_start();
